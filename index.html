@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <!--Mode switch  -->
+            <div class="mode-switch">
+                <button id="calcMode" class="active button">Calculator</button>
+                <button id="sciMode" class="button">Scientific</button>
+                <button id="convMode" class="button">Converter</button>
+            </div>
+            <!--Display goes here  -->
+            <div class="display">
+                <input type="text" id="display" readonly value="0"/>
+        </div>
+        <!--Calculator  -->
+        <div class="calculator-grid">
+            <button class="btn action">C</button>
+            <button class="btn action">DEL</button>
+            <button class="btn operator">/</button>
+            <button class="btn operator">*</button>
+
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn operator">-</button>
+
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn operator">+</button>
+
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn equal">=</button>
+
+            <button class="btn zero">0</button>
+            <button class="btn">.</button>
+        </div>
+
+        <!-- Scientific Calculator -->
+        <div class="scientific-grid hidden">
+            <button class="btn action" data-value="C">C</button>
+            <button class="btn action" data-value="DEL">DEL</button>
+            <button class="btn operator" data-value="(">(</button>
+            <button class="btn operator" data-value=")">)</button>
+
+            <button class="btn" data-value="sin(">sin</button>
+            <button class="btn" data-value="cos(">cos</button>
+            <button class="btn" data-value="tan(">tan</button>
+            <button class="btn operator" data-value="^">^</button>
+
+            <button class="btn" data-value="ln(">ln</button>
+            <button class="btn" data-value="log(">log</button>
+            <button class="btn" data-value="sqrt(">sqrt</button>
+            <button class="btn" data-value="pi">pi</button>
+
+            <button class="btn" data-value="e">e</button>
+            <button class="btn" data-value="fact(">x!</button>
+            <button class="btn operator" data-value="*">*</button>
+            <button class="btn operator" data-value="/">/</button>
+
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn operator" data-value="-">-</button>
+
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn operator" data-value="+">+</button>
+
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn equal" data-value="=">=</button>
+
+            <button class="btn zero" data-value="0">0</button>
+            <button class="btn" data-value=".">.</button>
+        </div>
+
+        <!--Converter  -->
+        <div class="converter hidden">
+            <input type="text" id="amount" placeholder="Enter amount" inputmode="decimal" autocomplete="off"/>
+            <div class="converter-keypad">
+                <button type="button" class="conv-key-btn" data-value="7">7</button>
+                <button type="button" class="conv-key-btn" data-value="8">8</button>
+                <button type="button" class="conv-key-btn" data-value="9">9</button>
+                <button type="button" class="conv-key-btn" data-value="C">C</button>
+
+                <button type="button" class="conv-key-btn" data-value="4">4</button>
+                <button type="button" class="conv-key-btn" data-value="5">5</button>
+                <button type="button" class="conv-key-btn" data-value="6">6</button>
+                <button type="button" class="conv-key-btn" data-value="DEL">DEL</button>
+
+                <button type="button" class="conv-key-btn" data-value="1">1</button>
+                <button type="button" class="conv-key-btn" data-value="2">2</button>
+                <button type="button" class="conv-key-btn" data-value="3">3</button>
+                <button type="button" class="conv-key-btn" data-value=".">.</button>
+
+                <button type="button" class="conv-key-btn zero" data-value="0">0</button>
+                <button type="button" class="conv-key-btn" data-value="NEG">+/-</button>
+                <button type="button" class="conv-key-btn" data-value="00">00</button>
+            </div>
+            <div class="currency-row">
+                <select id="fromCurrency">
+                    <option>USD</option>
+                    <option>EUR</option>
+                    <option>GBP</option>
+                </select>
+                <span class="to-text">to</span>
+                <select id="toCurrency">
+                    <option>KES</option>
+                    <option>USD</option>
+                    <option>EUR</option>
+                </select>
+            </div>
+            
+            <button class="convert-btn">Convert</button>
+            <div class="result">Result: <span id="result">0</span></div>
+    </div>
+</body>
+<script type="module" src="main.js"></script>
+</html>
